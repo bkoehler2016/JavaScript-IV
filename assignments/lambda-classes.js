@@ -7,6 +7,6 @@ class Person {
 
     }
     speak() {
-        return `Hello my name is ${this.name}`;
+        return `Hello my name is ${this.name}, I am from ${this.location}`;
     }
 }
