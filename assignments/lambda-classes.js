@@ -1,94 +1,91 @@
 // CODE here for your Lambda Classes
 class Person {
-    constructor(attributes) {
-        this.name = attributes.name;
-        this.age = attributes.age;
-        this.location = attributes.location;
-
-    }
-    speak() {
-        return `Hello my name is ${this.name}, I am from ${this.location}`;
-    }
+  constructor(attributes) {
+    this.name = attributes.name;
+    this.age = attributes.age;
+    this.location = attributes.location;
+  }
+  speak() {
+    return `Hello my name is ${this.name}, I am from ${this.location}`;
+  }
 }
 
 class Instructor extends Person {
-    constructor(InstructorAttr) {
-        super(InstructorAttr);
-        this.specialty = InstructorAttr.specialty;
-        this.favLanguage = InstructorAttr.favLanguage;
-        this.catchPhrase = InstructorAttr.catchPhrase;
-    }
-    demo(subject) {
-        return `Today we are learning about ${subject}`;
-    }
-    grade(student, subject) {
-        return `${student} receives a perfect score on ${subject}`;
-    }
+  constructor(InstructorAttr) {
+    super(InstructorAttr);
+    this.specialty = InstructorAttr.specialty;
+    this.favLanguage = InstructorAttr.favLanguage;
+    this.catchPhrase = InstructorAttr.catchPhrase;
+  }
+  demo(subject) {
+    return `Today we are learning about ${subject}`;
+  }
+  grade(student, subject) {
+    return `${student} receives a perfect score on ${subject}`;
+  }
 }
 
 class Student extends Person {
-    constructor(StudentAttr) {
-        super(StudentAttr);
-        this.previousBackground = StudentAttr.previousBackground;
-        this.className = StudentAttr.className;
-        this.favSubjects = StudentAttr.favSubjects;
-    }
+  constructor(StudentAttr) {
+    super(StudentAttr);
+    this.previousBackground = StudentAttr.previousBackground;
+    this.className = StudentAttr.className;
+    this.favSubjects = StudentAttr.favSubjects;
+  }
 
-    listSubjects(favSubjects) {
-        return this.favSubjects;
-    }
-    PRAssignment(subject) {
-        return `${this.name} has submitted a PR Assignment for ${subject}.`;
-    }
-    sprintChallenge(subject) {
-        return `${this.name} has begun the sprint challenge on ${subject}!`;
-    }
+  listSubjects(favSubjects) {
+    return this.favSubjects;
+  }
+  PRAssignment(subject) {
+    return `${this.name} has submitted a PR Assignment for ${subject}.`;
+  }
+  sprintChallenge(subject) {
+    return `${this.name} has begun the sprint challenge on ${subject}!`;
+  }
 }
 
 class TeamLead extends Instructor {
-    constructor(TeamLeadAttr) {
-        super(TeamLeadAttr);
-        this.gradeClassName = TeamLeadAttr.gradeClassName;
-        this.favInstructor = TeamLeadAttr.favInstructor;
-    }
-    standUp(channel) {
-        return `${this.name} debugs ${student_one.name}'s code on ${student_one.className}`;
-    }
+  constructor(TeamLeadAttr) {
+    super(TeamLeadAttr);
+    this.gradeClassName = TeamLeadAttr.gradeClassName;
+    this.favInstructor = TeamLeadAttr.favInstructor;
+  }
+  standUp(channel) {
+    return `${this.name} debugs ${student_one.name}'s code on ${student_one.className}`;
+  }
 }
 
 const student_one = new Student({
-    name: 'Ben',
-    age: 36,
-    location: 'Mesa',
-    previousBackground: 'Customer Service',
-    className: 'Javascript IV',
-    favSubjects: ['HTML', 'CSS', 'Javascript']
+  name: 'Ben',
+  age: 36,
+  location: 'Mesa',
+  previousBackground: 'Customer Service',
+  className: 'Javascript IV',
+  favSubjects: ['HTML', 'CSS', 'Javascript']
 });
 
-
 const instructor_one = new Instructor({
-    name: 'Pace',
-    age: 26,
-    location: 'Mesa',
-    specialty: 'Javascript',
-    favLanguage: 'Spanish',
-    catchPhrase: 'Logitech is awesome'
+  name: 'Pace',
+  age: 26,
+  location: 'Mesa',
+  specialty: 'Javascript',
+  favLanguage: 'Spanish',
+  catchPhrase: 'Logitech is awesome'
 });
 
 const teamLead_one = new TeamLead({
-    name: 'Julie',
-    age: 25,
-    location: 'New York',
-    favLanguage: 'React',
-    catchPhrase: 'Wubba lubba dub dub',
-    gradeClassName: 'WEBFT8',
-    favInstructor: 'Pace Ellsworth'
-
+  name: 'Julie',
+  age: 25,
+  location: 'New York',
+  favLanguage: 'React',
+  catchPhrase: 'Wubba lubba dub dub',
+  gradeClassName: 'WEBFT8',
+  favInstructor: 'Pace Ellsworth'
 });
 
-console.log(student_one.PRAssignment("HTML"));
-console.log(instructor_one.demo("Classes and Constructors"));
+console.log(student_one.PRAssignment('HTML'));
+console.log(instructor_one.demo('Classes and Constructors'));
 console.log(`${instructor_one.name} thinks ${instructor_one.catchPhrase}`);
-console.log(teamLead_one.standUp("WebPT11"));
-console.log(instructor_one.grade("Ben", "Javascript IV"));
+console.log(teamLead_one.standUp('WebPT11'));
+console.log(instructor_one.grade('Ben', 'Javascript IV'));
 console.log(`${teamLead_one.name} says ${teamLead_one.catchPhrase}`);
