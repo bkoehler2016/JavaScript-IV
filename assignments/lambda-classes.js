@@ -22,7 +22,7 @@ class Instructor extends Person {
         return `Today we are learning about ${subject}`;
     }
     grade(student, subject) {
-        return `${student.name} receives a perfect score on ${this.subject}`;
+        return `${student} receives a perfect score on ${subject}`;
     }
 }
 
@@ -52,7 +52,7 @@ class TeamLead extends Instructor {
         this.favInstructor = TeamLeadAttr.favInstructor;
     }
     standUp(channel) {
-        return `${this.name} debugs ${student}'s code on ${subject}`;
+        return `${this.name} debugs ${student_one.name}'s code on ${student_one.className}`;
     }
 }
 
@@ -61,18 +61,10 @@ const student_one = new Student({
     age: 36,
     location: 'Mesa',
     previousBackground: 'Customer Service',
-    className: 'Javascript III',
+    className: 'Javascript IV',
     favSubjects: ['HTML', 'CSS', 'Javascript']
 });
 
-const student_two = new Student({
-    name: 'Carlos',
-    age: 40,
-    location: 'Orlando',
-    previousBackground: 'US Marine',
-    className: 'WebPT11',
-    favSubjects: ['HTML', 'CSS', 'Javascript']
-});
 
 const instructor_one = new Instructor({
     name: 'Pace',
@@ -96,4 +88,7 @@ const teamLead_one = new TeamLead({
 
 console.log(student_one.PRAssignment("HTML"));
 console.log(instructor_one.demo("Classes and Constructors"));
+console.log(`${instructor_one.name} thinks ${instructor_one.catchPhrase}`);
+console.log(teamLead_one.standUp("WebPT11"));
+console.log(instructor_one.grade("Ben", "Javascript IV"));
 console.log(`${teamLead_one.name} says ${teamLead_one.catchPhrase}`);
