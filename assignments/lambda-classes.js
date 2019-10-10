@@ -55,3 +55,45 @@ class TeamLead extends Instructor {
         return `${this.name} debugs ${student}'s code on ${subject}`;
     }
 }
+
+const student_one = new Student({
+    name: 'Ben',
+    age: 36,
+    location: 'Mesa',
+    previousBackground: 'Customer Service',
+    className: 'Javascript III',
+    favSubjects: ['HTML', 'CSS', 'Javascript']
+});
+
+const student_two = new Student({
+    name: 'Carlos',
+    age: 40,
+    location: 'Orlando',
+    previousBackground: 'US Marine',
+    className: 'WebPT11',
+    favSubjects: ['HTML', 'CSS', 'Javascript']
+});
+
+const instructor_one = new Instructor({
+    name: 'Pace',
+    age: 26,
+    location: 'Mesa',
+    specialty: 'Javascript',
+    favLanguage: 'Spanish',
+    catchPhrase: 'Logitech is awesome'
+});
+
+const teamLead_one = new TeamLead({
+    name: 'Julie',
+    age: 25,
+    location: 'New York',
+    favLanguage: 'React',
+    catchPhrase: 'Wubba lubba dub dub',
+    gradeClassName: 'WEBFT8',
+    favInstructor: 'Pace Ellsworth'
+
+});
+
+console.log(student_one.PRAssignment("HTML"));
+console.log(instructor_one.demo("Classes and Constructors"));
+console.log(`${teamLead_one.name} says ${teamLead_one.catchPhrase}`);
