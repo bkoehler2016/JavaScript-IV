@@ -25,3 +25,30 @@ class Instructor extends Person {
         return `${student.name} receives a perfect score on ${this.subject}`;
     }
 }
+
+class Student extends Person {
+    constructor(StudentAttr) {
+        super(StudentAttr);
+        this.previousBackground = StudentAttr.previousBackground;
+        this.className = StudentAttr.className;
+        this.favSubjects = StudentAttr.favSubjects;
+    }
+
+    listSubjects(favSubjects) {
+        return this.favSubjects;
+    }
+    PRAssignment(subject) {
+        return `${this.name} has begun the sprint callenge on ${subject}`;
+    }
+}
+
+class TeamLead extends Instructor {
+    constructor(TeamLeadAttr) {
+        super(TeamLeadAttr);
+        this.gradeClassName = TeamLeadAttr.gradeClassName;
+        this.favInstructor = TeamLeadAttr.favInstructor;
+    }
+    standUp(channel) {
+        return `${this.name} debugs ${student}'s code on ${subject}`;
+    }
+}
