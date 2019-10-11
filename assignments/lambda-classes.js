@@ -23,6 +23,11 @@ class Instructor extends Person {
   grade(student, subject) {
     return `${student} receives a perfect score on ${subject}`;
   }
+  scoreCard(obj) {
+    let grade = Math.ceil(Math.random() * 15);
+    console.log(`\n ${this.name} gives ${obj.name} a score of: ${grade}`);
+
+  }
 }
 
 class Student extends Person {
@@ -31,6 +36,7 @@ class Student extends Person {
     this.previousBackground = StudentAttr.previousBackground;
     this.className = StudentAttr.className;
     this.favSubjects = StudentAttr.favSubjects;
+    this.grade = StudentAttr.grade;
   }
 
   listSubjects(favSubjects) {
@@ -41,6 +47,14 @@ class Student extends Person {
   }
   sprintChallenge(subject) {
     return `${this.name} has begun the sprint challenge on ${subject}!`;
+  }
+  graduate() {
+    if (this.grade >= 70) {
+      console.log(`i can graduate with a score of: ${this.grade}`);
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 
@@ -53,6 +67,7 @@ class TeamLead extends Instructor {
   standUp(channel) {
     return `${this.name} debugs ${student_one.name}'s code on ${student_one.className}`;
   }
+
 }
 
 const student_one = new Student({
