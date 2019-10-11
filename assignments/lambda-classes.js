@@ -24,8 +24,11 @@ class Instructor extends Person {
     return `${student} receives a perfect score on ${subject}`;
   }
   scoreCard(obj) {
-    let grade = Math.ceil(Math.random() * 15);
-    console.log(`\n ${this.name} gives ${obj.name} a score of: ${grade}`);
+    let plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+    let numGrade = Math.floor(Math.random() * 25) * plusOrMinus;
+    let finalNum = obj + numGrade;
+    return finalNum;
+
 
   }
 }
@@ -50,10 +53,10 @@ class Student extends Person {
   }
   graduate() {
     if (this.grade >= 70) {
-      console.log(`i can graduate with a score of: ${this.grade}`);
-      return true;
+      return `Your final grade is ${student_one.grade} you passed`;
+
     } else {
-      return false;
+      return `Your final grade is ${student_one.grade} you will need to flex`;
     }
   }
 }
@@ -64,7 +67,10 @@ class TeamLead extends Instructor {
     this.gradeClassName = TeamLeadAttr.gradeClassName;
     this.favInstructor = TeamLeadAttr.favInstructor;
   }
-  standUp(channel) {
+  standUp(slackChannel) {
+    return `${this.name} announces to ${slackChannel}, @channel standy times!`;
+  }
+  debugsCode(student, subject) {
     return `${this.name} debugs ${student_one.name}'s code on ${student_one.className}`;
   }
 
@@ -104,3 +110,4 @@ console.log(`${instructor_one.name} thinks ${instructor_one.catchPhrase}`);
 console.log(teamLead_one.standUp('WebPT11'));
 console.log(instructor_one.grade('Ben', 'Javascript IV'));
 console.log(`${teamLead_one.name} says ${teamLead_one.catchPhrase}`);
+console.log(student_one.graduate(instructor_one.scoreCard(instructor_one, 90)));
