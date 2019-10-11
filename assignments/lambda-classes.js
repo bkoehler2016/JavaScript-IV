@@ -25,7 +25,7 @@ class Instructor extends Person {
   }
   scoreCard(obj) {
     let plusOrMinus = Math.random() < 0.5 ? -1 : 1;
-    let numGrade = Math.ceil(Math.random() * 25) * plusOrMinus;
+    let numGrade = Math.ceil(Math.random() * 100) * plusOrMinus;
     let finalNum = obj + numGrade;
     return finalNum;
 
